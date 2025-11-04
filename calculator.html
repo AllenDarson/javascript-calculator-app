@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+     <link rel="icon" type="image/x-icon" href="./calculator.png">
+    <link rel="stylesheet" href="style.css">
+    <title>Calculator Using JS</title>
+</head>
+<body>
+    <div class="display">
+        <input type="text" id="number" placeholder="enter the number" onclick="clearInput()">
+    <div class="Calculator Values">
+        <button class="clear" onclick="clearInput()">C</button>
+      <button class="clear" onclick="deleteLast()">⌫</button>
+      <button onclick="percentage()">%</button>
+      <button class="operator" onclick="appendValue('/')">÷</button>
+
+      <button onclick="appendValue('7')">7</button>
+      <button onclick="appendValue('8')">8</button>
+      <button onclick="appendValue('9')">9</button>
+      <button class="operator" onclick="appendValue('*')">×</button>
+
+      <button onclick="appendValue('4')">4</button>
+      <button onclick="appendValue('5')">5</button>
+      <button onclick="appendValue('6')">6</button>
+      <button class="operator" onclick="appendValue('-')">−</button>
+
+      <button onclick="appendValue('+')">1</button>
+      <button onclick="appendValue('2')">2</button>
+      <button onclick="appendValue('3')">3</button>
+      <button class="operator" onclick="appendValue('+')">+</button>
+
+      <button onclick="appendValue('0')">0</button>
+      <button onclick="appendValue('.')">.</button>
+      <button class="operator" onclick="calculate()">=</button>
+        <script>
+              input = document.getElementById("number");
+
+function appendValue(values) {
+    console.log(values)
+  input.value += values;
+}
+
+function clearInput() {
+  input.value = "";
+}
+
+function deleteLast() {
+  input.value = input.value.slice(0, -1);
+}
+
+function calculate() {
+  result = eval(input.value);
+  input.value = result;
+}
+function percentage() {
+   value = input.value;
+   result = eval(value);
+  input.value = result / 100;
+}
+
+        </script>
+    </div>
+    </div> 
+</body>
+</html>
